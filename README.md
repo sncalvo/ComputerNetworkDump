@@ -1,1 +1,1 @@
-## A plcae where to dump ComputerNetworks material
+## A place where to dump ComputerNetworks material

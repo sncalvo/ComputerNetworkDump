@@ -99,3 +99,26 @@ realizar envios entre el cliente y servidor.
 Aqui se ve que un host servidor puede dar 
 soporte a muchos sockets TCP simultaneamente 
 dada la manera de identificacion de estos. 
+
+# Un poco de UDP
+UDP es un protoclo que ahce poco mas que agregar informacion
+para hacer multiplexing y demultiplexing y permitir
+verificar la integridad del mensaje mediante Checksum.
+
+Este checksum es necesario dadoq ue la capa de red no siempre 
+implementa dicho checksum y tambien puede ocurrir errores
+entre el adaptador de red y la capa de transporte, por lo que
+seria necesario este checkeo postrerior.
+
+Dado que UDP no establece conexiones, es muy usado para
+solicitudes instantaneas como lo es las consultas de DNS.
+
+Solia ser usado mucho par multimedia aunque esto dejo de ser asi
+por razones de seguiridad. En vez se empezo a usar TCP.
+
+En general se utiliza UDP dado que no realiza ninguna accion
+no extra como lo ahce UDP con sus multiples checkeos para corroborar
+que los paquetes hayan llegado a destino. Google lo tuiliza para la
+implementacion de QUIC, un protocolo para transimision de datos
+para browsers el cual implementa una capa de fiabilidad en capa de
+aplicacion pero manteniendo alta velocidad (sabemos como).
